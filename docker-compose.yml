@@ -1,0 +1,29 @@
+version: '3.5'
+
+# https://<yourhostname>:14500/?username=wireshark&password=wireshark
+
+services:
+    wireshark:
+        cap_add:
+            - NET_ADMIN
+        container_name: wireshark
+        environment:
+            XPRA_PW: wireshark
+        hostname: wireshark
+        image: ffeldhaus/wireshark:latest
+        logging:
+            driver: json-file
+            options:
+                max-file: "3"
+                max-size: "10m"
+        networks:
+            - wireshark-net
+        ports:
+            - "14500:14500"
+        restart: unless-stopped
+        volumes:
+            - ./:/opt
+
+networks:
+    wireshark-net:
+        name: wireshark-container-net
