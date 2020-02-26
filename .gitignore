@@ -1,2 +1,9 @@
+.cache
+.config
+.fakexinerama
+.None-fakexinerama
+.Xauthority
 tcpdump*
 *.log
+
+
