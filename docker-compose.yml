@@ -12,18 +12,21 @@ services:
             - ubuntu.home
             - home
         environment:
-            XPRA_PW: wireshark
-        hostname: wireshark.home
-        image: ffeldhaus/wireshark:latest
+            - PUID=1000
+            - PGID=1000
+            - TZ=Etc/UTC
+        image: linuxserver/wireshark:version-4.0.11-r0
         logging:
             driver: json-file
             options:
                 max-file: "3"
                 max-size: "10m"
+#       network_mode: host
         networks:
             - wireshark-net
         ports:
-            - "14500:14500"
+          - "3000:3000"
+          - "3001:3001"
         restart: unless-stopped
         volumes:
             - ./:/home/wireshark
