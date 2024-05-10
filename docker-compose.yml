@@ -13,8 +13,8 @@ services:
             - PUID=1000
             - PGID=1000
             - TZ=Etc/UTC
-            - SYSKEYLOGFILE=sslkeyfile.txt
-        image: linuxserver/wireshark:version-4.0.11-r0
+            - SSLKEYLOGFILE=/home/wireshark/sslkeyfile.log
+        image: s2.ubuntu.home:5000/docker.io/linuxserver/wireshark:4.0.14
         logging:
             driver: json-file
             options:
