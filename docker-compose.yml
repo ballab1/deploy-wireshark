@@ -14,7 +14,7 @@ services:
             - PGID=1000
             - TZ=Etc/UTC
             - SSLKEYLOGFILE=/home/wireshark/sslkeyfile.log
-        image: s2.ubuntu.home:5000/docker.io/linuxserver/wireshark:4.0.14
+        image: s2.ubuntu.home:5000/docker.io/linuxserver/wireshark:4.2.5
         logging:
             driver: json-file
             options:
