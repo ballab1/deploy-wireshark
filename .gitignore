@@ -3,7 +3,8 @@
 .fakexinerama
 .None-fakexinerama
 .Xauthority
-tcp.dump
+*.dump
+*.pcap*
 sslkeyfile.txt
 *.log
 *.json
